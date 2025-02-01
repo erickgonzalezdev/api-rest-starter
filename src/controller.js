@@ -10,7 +10,7 @@ export default class InitController {
 
     this.errorHandler = new ErrorHandler()
     this.config.errorHandler = this.errorHandler
-    
+
     this.libraries = new Libraries(config)
     this.config.libraries = this.libraries
 
@@ -23,7 +23,6 @@ export default class InitController {
     this.routers = new Routers(this.config)
 
     this.start = this.start.bind(this)
-
   }
 
   start (app) {

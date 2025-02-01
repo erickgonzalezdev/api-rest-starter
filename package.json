@@ -9,8 +9,8 @@
     "test:e2e": "export ENVIROMENT=test && mocha --exit --timeout 15000 test/e2e/",
     "test:unit": "export ENVIROMENT=test && mocha --exit --timeout 15000 --recursive test/unit/",
     "test:all": "export ENVIROMENT=test && c8 --reporter=text mocha --exit --timeout 15000 --recursive test/unit test/e2e/",
-    "coverage:report": "export ENVIROMENT=test && c8 --reporter=html mocha --exit --timeout 15000 --recursive test/unit/ test/e2e/",
-    "lint": "standard --fix",
+    "coverage:report": "npm run lint && export ENVIROMENT=test && c8 --reporter=html mocha --exit --timeout 15000 --recursive test/unit/ test/e2e/",
+    "lint": "standard --env mocha --fix",
     "docs": "./node_modules/.bin/apidoc -i src/ -o docs"
   },
   "repository": {
