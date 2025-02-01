@@ -18,14 +18,14 @@ import serve from 'koa-static'
 import mount from 'koa-mount'
 
 class Server {
-  constructor() {
+  constructor () {
     this.mongoose = mongoose
     this.config = config
     this.port = this.config.port || 8085
     this.start = this.start.bind(this)
   }
 
-  async start() {
+  async start () {
     // Connect to the Mongo Database.
     this.mongoose.Promise = global.Promise
     // this.mongoose.set('useCreateIndex', true) // Stop deprecation warning.
